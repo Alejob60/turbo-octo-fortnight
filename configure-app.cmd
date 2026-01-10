@@ -1,0 +1,1 @@
+az webapp config set --name Orbitalprime-frontend --resource-group orbital-prime --linux-fx-version "NODE|18-lts"

@@ -1,0 +1,7 @@
+{
+  "NEXT_PUBLIC_MISYBOT_API_URL": "https://realculture-backend-g3b9deb2fja4b8a2.canadacentral-01.azurewebsites.net",
+  "NEXT_PUBLIC_BACKEND_URL": "https://realculture-backend-g3b9deb2fja4b8a2.canadacentral-01.azurewebsites.net",
+  "NEXT_PUBLIC_API_URL": "https://realculture-backend-g3b9deb2fja4b8a2.canadacentral-01.azurewebsites.net",
+  "NEXT_PUBLIC_API_BASE_URL": "https://realculture-backend-g3b9deb2fja4b8a2.canadacentral-01.azurewebsites.net",
+  "NODE_ENV": "production"
+}

@@ -1,0 +1,5 @@
+{
+  "platform": {
+    "linuxFxVersion": "NODE|24-lts"
+  }
+}

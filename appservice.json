@@ -1,0 +1,18 @@
+{
+  "runtime": {
+    "os": "linux",
+    "framework": "node",
+    "frameworkVersion": "18"
+  },
+  "appSettings": [
+    {
+      "name": "NODE_ENV",
+      "value": "production"
+    },
+    {
+      "name": "NEXT_PUBLIC_MISYBOT_API_URL",
+      "value": "https://api.misybot.com/api"
+    }
+  ],
+  "schemaVersion": "1.0.0"
+}
