@@ -56,8 +56,8 @@ const Login = () => {
         // Mostrar datos del usuario en consola
         console.log('Datos del usuario almacenados:', userData);
         
-        // Redirigir al nuevo Dashboard de Orbital Prime
-        router.push('/dashboard');
+        // Redirigir al Admin OS Dashboard que tiene botón de logout
+        router.push('/admin-os');
       } else {
         throw new Error('Token no encontrado en la respuesta del servidor');
       }
