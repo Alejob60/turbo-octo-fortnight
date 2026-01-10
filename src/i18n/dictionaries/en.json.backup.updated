@@ -1,0 +1,315 @@
+{
+  "app": {
+    "nvidia_partner": "NVIDIA INCEPTION PARTNER",
+    "deploying_intelligence": "DEPLOYING INTELLIGENCE",
+    "sovereign": "SOVEREIGN",
+    "intelligence": "INTELLIGENCE",
+    "infrastructure": "INFRASTRUCTURE",
+    "description_line1": "Orbital Prime implements military-grade AI systems and predictive computing for Clinics, Government and Corporations in LATAM.",
+    "description_line2": "We recover 15% of your operational revenue in 90 days.",
+    "request_access": "REQUEST ACCESS",
+    "view_capability": "VIEW CAPABILITIES",
+    "stats_latency": "LATENCY",
+    "stats_uptime": "UPTIME",
+    "stats_security": "SECURITY",
+    "stats_region": "REGION",
+    "stats_region_value": "COL-SOUTH",
+    "system_modules": "SYSTEM MODULES",
+    "module_neural_ops": "NEURAL-OPS HEALTH",
+    "module_neural_ops_price": "ENTERPRISE / CLINICS",
+    "module_neural_ops_desc": "AI infrastructure for level 3 and 4 clinics. Triage automation, predictive scheduling and absenteeism reduction. Automatic accounts recovery.",
+    "module_gov_tech": "GOV-TECH SENTINEL",
+    "module_gov_tech_price": "GOVERNMENT",
+    "module_gov_tech_desc": "Preventive surveillance systems and school security based on computer vision (NVIDIA). Real-time risk detection for municipalities.",
+    "module_predictive_compute": "PREDICTIVE COMPUTE",
+    "module_predictive_compute_price": "FINTECH / BANKING",
+    "module_predictive_compute_desc": "Massive data processing on Azure for fraud detection and credit risk. Sovereign models that never take data out of the country.",
+    "powered_by_infrastructure": "POWERED BY GLOBAL INFRASTRUCTURE",
+    "partner_nvidia": "NVIDIA",
+    "partner_inception": "INCEPTION",
+    "partner_azure": "MICROSOFT AZURE",
+    "partner_google": "GOOGLE CLOUD",
+    "init_partnership": "INITIALIZE PARTNERSHIP",
+    "partnership_desc": "Orbital Prime carefully selects its strategic partners. For high-compute contracts, we verify corporate credentials.",
+    "access_id_placeholder": "ACCESS ID (NAME)",
+    "corporate_entity_placeholder": "CORPORATE ENTITY",
+    "email_channel_placeholder": "SECURE EMAIL CHANNEL",
+    "transmit_request": "TRANSMIT REQUEST",
+    "footer_copyright": "ORBITAL PRIME SYSTEMS © 2026. ALL RIGHTS RESERVED.",
+    "footer_status": "SYSTEM STATUS",
+    "footer_latency": "LATENCY",
+    "system_access": "SYSTEM ACCESS"
+  },
+  "nav": {
+    "logo": "ORBITAL PRIME",
+    "solutions": "Solutions",
+    "technology": "Technology",
+    "contact": "Contact",
+    "requestAccess": "REQUEST ACCESS",
+    "login": "Login",
+    "logout": "Logout",
+    "home": "Home",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "nvidia_cores_active": "NVIDIA CORES: ACTIVE",
+    "azure_secure": "AZURE: SECURE"
+  },
+  "hero": {
+    "title": "ARTIFICIAL INTELLIGENCE INFRASTRUCTURE",
+    "subtitle": "Tactical optimization for supply chains and critical operations. NVIDIA Inception Partner.",
+    "cta": "INITIATE PROTOCOL"
+  },
+  "partners": {
+    "title": "OUR TECHNOLOGY PARTNERS",
+    "nvidia": "NVIDIA",
+    "microsoft": "MICROSOFT"
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "dataAudit": {
+      "title": "Forensic Data Audit",
+      "description": "Deep data analysis to identify patterns, anomalies, and opportunities in your operations."
+    },
+    "vision": {
+      "title": "Logistics Computer Vision",
+      "description": "Computer vision systems to optimize logistics and supply chain processes."
+    },
+    "agents": {
+      "title": "Autonomous Agents",
+      "description": "Autonomous AI for real-time decision making and human-free operations."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Orbital Prime. Global Operations from Palmira, Colombia."
+  },
+  "auth": {
+    "email": "Email Address",
+    "password": "Password",
+    "name": "Name",
+    "login": "Login",
+    "register": "Register",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "••••••••",
+    "namePlaceholder": "Your full name",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "loggingIn": "Logging in...",
+    "registering": "Registering...",
+    "noAccount": "Don't have an account?",
+    "alreadyAccount": "Already have an account?",
+    "registerLink": "Sign up here",
+    "loginLink": "Login here",
+    "access_granted": "ACCESS GRANTED",
+    "restricted_area_warning": "RESTRICTED AREA. All access attempts are logged using NVIDIA sovereign compute protocols."
+  },
+  "dashboard": {
+    "title": "Audit Dashboard",
+    "subtitle": "Real-time monitoring control panel",
+    "kpi": {
+      "revenueAtRisk": "REVENUE AT RISK",
+      "bedTurnover": "BED TURNOVER",
+      "triageAccuracy": "TRIAGE ACCURACY",
+      "noShowRate": "NO-SHOW RATE",
+      "preventedIncidents": "PREVENTED INCIDENTS",
+      "responseLatency": "RESPONSE LATENCY",
+      "hotspotsActive": "HOTSPOTS ACTIVE",
+      "cameraCoverage": "CAMERA COVERAGE",
+      "fraudBlocked": "FRAUD BLOCKED",
+      "txVolume": "TX VOLUME",
+      "falsePositives": "FALSE POSITIVES",
+      "apiLatency": "API LATENCY",
+      "leakageDetected": "LEAKAGE DETECTED",
+      "ghostAssets": "GHOST ASSETS",
+      "dataMismatch": "DATA MISMATCH",
+      "processAnomalies": "PROCESS ANOMALIES"
+    },
+    "alert": {
+      "critical": "CRITICAL",
+      "warning": "WARNING",
+      "info": "INFO"
+    },
+    "chart": {
+      "patientFlowEfficiency": "PATIENT FLOW EFFICIENCY vs COST",
+      "incidentPrediction": "INCIDENT PREDICTION & RESPONSE",
+      "transactionVolume": "TRANSACTION VOLUME VS THREATS",
+      "cumulativeLeakage": "CUMULATIVE REVENUE LEAKAGE (DETECTED)"
+    },
+    "nav": {
+      "liveOperations": "LIVE OPERATIONS",
+      "revenueRecovery": "REVENUE RECOVERY",
+      "patientFlow": "PATIENT FLOW",
+      "geospatial": "GEOSPATIAL",
+      "globalTx": "GLOBAL TX",
+      "infrastructure": "INFRASTRUCTURE",
+      "autoReports": "AUTO-REPORTS"
+    },
+    "status": {
+      "active": "ACTIVE",
+      "secure": "SECURE",
+      "neuralNet": "NEURAL NET",
+      "module": "ACTIVE MODULE",
+      "active_module": "ACTIVE MODULE",
+      "neural_net": "NEURAL NET"
+    },
+    "system": {
+      "resource": "RESOURCE",
+      "status": "STATUS",
+      "usage": "USAGE",
+      "response": "RESPONSE"
+    },
+    "modes": {
+      "health": "HEALTH",
+      "gov": "GOV",
+      "fintech": "FINTECH",
+      "audit": "AUDIT"
+    },
+    "mode_labels": {
+      "HEALTH": "HEALTH",
+      "GOV": "GOV",
+      "FINTECH": "FINTECH",
+      "AUDIT": "AUDIT"
+    },
+    "mode_titles": {
+      "HEALTH": "NEURAL-OPS: CLINICAL",
+      "GOV": "GOV-SENTINEL: DEFENSE",
+      "FINTECH": "ORBITAL: FIN-CORE",
+      "AUDIT": "FORENSIC CORE: AUDIT"
+    },
+    "mode_sectors": {
+      "HEALTH": "SECTOR: HOSPITAL_MAIN_01",
+      "GOV": "ZONE: PALMIRA_METRO_AREA",
+      "FINTECH": "NODE: LATAM_TX_GATEWAY",
+      "AUDIT": "TARGET: RETAIL_INV_DB"
+    },
+    "chart_labels": {
+      "patientFlowEfficiency": "PATIENT FLOW EFFICIENCY vs COST",
+      "incidentPrediction": "INCIDENT PREDICTION & RESPONSE",
+      "transactionVolume": "TRANSACTION VOLUME VS THREATS",
+      "cumulativeLeakage": "CUMULATIVE REVENUE LEAKAGE (DETECTED)"
+    },
+    "system_status": {
+      "resource": "Resource",
+      "status": "Status",
+      "usage": "Usage",
+      "response": "Response"
+    },
+    "system_resources": {
+      "GPU_CLUSTER": "GPU_CLUSTER",
+      "NEURAL_NET": "NEURAL_NET",
+      "DATA_PIPELINE": "DATA_PIPELINE",
+      "SECURE_VAULT": "SECURE_VAULT",
+      "COMPUTE_GRID": "COMPUTE_GRID"
+    },
+    "system_status_values": {
+      "ACTIVE": "ACTIVE"
+    },
+    "alerts": {
+      "detected": "DETECTED",
+      "aiValidated": "AI VALIDATED",
+      "today": "TODAY",
+      "monitoring": "MONITORING",
+      "optimal": "OPTIMAL",
+      "last24h": "LAST 24H",
+      "low": "LOW",
+      "stable": "STABLE",
+      "recoverable": "RECOVERABLE",
+      "items": "ITEMS",
+      "highRisk": "HIGH RISK",
+      "live_time": "LIVE",
+      "critical_billing_mismatch": "Billing mismatch detected: ICU Patient #492 (Undocumented procedure).",
+      "warning_bed_capacity": "Bed capacity surge predicted for 18:00 hrs based on ER inflow.",
+      "info_auto_appointment": "Automatic appointment refilling active: 14 slots recovered today.",
+      "critical_weapons_signature": "Weapons signature detected in School Zone B (Confidence: 94%).",
+      "warning_crowd_gathering": "Crowd gathering pattern matches 'Protest' profile in Plaza Main.",
+      "info_patrol_rerouted": "Patrol units rerouted to predicted high-risk zones.",
+      "critical_botnet_attack": "Botnet attack detected on Login Gateway (IP Range: Eastern EU).",
+      "warning_transaction_spike": "Transaction spike in 'High Risk' merchant category.",
+      "info_sovereign_cloud": "Sovereign Cloud sync completed (Data localized).",
+      "critical_inventory_theft": "Inventory Theft Pattern: User ADMIN_04 bypassing weighing protocols.",
+      "warning_price_discrepancy": "Price discrepancy detected: 5,000 units sold below cost.",
+      "info_ghost_asset_report": "Ghost asset report generated for Fiscal Year 2025.",
+      "encryption_on": "ENCRYPTION: ON",
+      "active": "ACTIVE",
+      "system_status": "System Status"
+    },
+    "real_time": "Real Time",
+    "tabs": {
+      "health": "HEALTH",
+      "vision": "VISION",
+      "audit": "AUDIT"
+    },
+    "health": {
+      "icu_occupancy": "ICU Occupancy",
+      "claim_recovery": "Claim Recovery",
+      "ia_triage": "IA Triage",
+      "active_patients": "Active Patients",
+      "vital_signs": "VITAL SIGNS",
+      "continuous_monitoring": "CONTINUOUS MONITORING",
+      "clinical_storage": "CLINICAL STORAGE",
+      "hl7_records": "HL7 Records",
+      "encrypted": "ENCRYPTED",
+      "dicom_images": "DICOM Images",
+      "redundant": "REDUNDANT"
+    },
+    "vision": {
+      "active_cameras": "Active Cameras",
+      "intrusion_alerts": "Intrusion Alerts",
+      "face_recognitions": "Face Recognitions",
+      "rec": "REC",
+      "basement": "Basement",
+      "unauthorized": "UNAUTHORIZED",
+      "personnel": "PERSONNEL",
+      "event_log": "EVENT LOG",
+      "access_denied": "Access Denied",
+      "vehicle_identified": "Vehicle Identified",
+      "abandoned_object": "Abandoned Object",
+      "guard_round_complete": "Guard Round Complete"
+    },
+    "audit": {
+      "paa_execution": "PAA Execution",
+      "fiscal_savings": "Fiscal Savings",
+      "fraud_alerts": "Fraud Alerts",
+      "safe": "SAFE",
+      "active_contracts": "Active Contracts",
+      "active": "ACTIVE",
+      "forensic_audit": "FORENSIC AUDIT",
+      "id": "ID",
+      "rubro": "Category",
+      "amount": "Amount",
+      "ia_validation": "IA Validation",
+      "integrity": "Integrity",
+      "ia_training": "IA Training",
+      "approved": "APPROVED",
+      "risk": "RISK",
+      "critical": "CRITICAL",
+      "hash_ok": "OK",
+      "cctv_surveillance": "CCTV Surveillance",
+      "infrastructure": "Infrastructure",
+      "secure_warehouse": "SECURE WAREHOUSE",
+      "distributed_audit": "Distributed Audit",
+      "encryption": "Encryption",
+      "key": "Key",
+      "active_nodes": "Active Nodes",
+      "lifetime": "Lifetime",
+      "immutable": "IMMUTABLE",
+      "non_corruptible_data": "Non-Corruptible Data"
+    },
+    "sectors": {
+      "health": "ORBITAL HEALTH",
+      "health_subtitle": "Hospital Systems & Patient Care",
+      "vision": "ORBITAL VISION",
+      "vision_subtitle": "Security & Surveillance Systems",
+      "audit": "ORBITAL AUDIT",
+      "audit_subtitle": "Financial & Compliance Systems"
+    },
+    "search_placeholder": "Search systems...",
+    "role_director": "Director",
+    "ai_assistant": "AI Assistant",
+    "ai_assistant_short": "AI",
+    "processing_request": "Processing request",
+    "analysis_complete": "Analysis complete",
+    "chat_placeholder": "Ask about systems, reports, or metrics...",
+    "system_online": "System Online",
+    "welcome_message": "Welcome, Director. All systems are operational. Which sector would you like to receive a report on?"
+  }
+}

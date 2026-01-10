@@ -1,0 +1,78 @@
+/* Control Center Dashboard specific styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #0f0f0f;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* Animaciones específicas para el Control Center */
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+@keyframes scan-target {
+  0% { top: 30%; left: 20%; width: 80px; border-color: #00f0ff; }
+  50% { top: 60%; left: 70%; width: 120px; border-color: #ff2a2a; }
+  100% { top: 40%; left: 50%; width: 100px; border-color: #00f0ff; }
+}
+
+.animate-scan-target {
+  animation: scan-target 4s infinite alternate;
+}
+
+/* Estilos para el modo oscuro del Control Center */
+.bg-control-center {
+  background: #050505;
+}
+
+.bg-panel-control {
+  background: #0f0f0f;
+}
+
+.border-control {
+  border-color: #333;
+}
+
+.text-primary-control {
+  color: #2563eb;
+}
+
+.text-accent-control {
+  color: #00f0ff;
+}
+
+.text-alert-control {
+  color: #ff2a2a;
+}
+
+.text-success-control {
+  color: #00ff88;
+}
+
+.text-main-control {
+  color: #e0e0e0;
+}
+
+.text-muted-control {
+  color: #666;
+}
+
+.font-code-control {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-ui-control {
+  font-family: 'Inter', sans-serif;
+}

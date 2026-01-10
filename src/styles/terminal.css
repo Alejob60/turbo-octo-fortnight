@@ -1,0 +1,15 @@
+/* Estilos para ocultar la barra de scroll */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE y Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Estilos adicionales para el terminal */
+.terminal-shell {
+  background: rgba(0, 0, 0, 0.9);
+  font-family: 'Courier New', monospace;
+}
