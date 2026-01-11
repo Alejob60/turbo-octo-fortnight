@@ -62,8 +62,12 @@ const Register = () => {
       } else {
         throw new Error('Token no encontrado en la respuesta del servidor');
       }
-    } catch (err: any) {
-      setError(err.message || 'Error al registrar usuario. Por favor, inténtalo de nuevo.');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError('An unexpected error occurred during registration.');
+      }
       console.error('Registration error:', err);
     } finally {
       setLoading(false);

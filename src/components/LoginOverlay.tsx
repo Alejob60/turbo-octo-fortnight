@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Lock, User, Key, ShieldCheck, AlertTriangle, X } from 'lucide-react';
 

@@ -1,22 +1,16 @@
 'use client';
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-
-interface LanguageContextType {
-  language: string;
-  setLanguage: (lang: string) => void;
-  t: (key: string) => string;
-}
-
-// Cargar diccionarios estáticamente
-const dictionaries = {
-  es: () => import('./dictionaries/es.json').then(module => module.default || module),
-  en: () => import('./dictionaries/en.json').then(module => module.default || module),
-};
+import { LanguageContextType, DictionaryMessages } from './LanguageTypes';
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const dictionaries = React.useMemo(() => ({
+    es: () => import('./dictionaries/es.json').then(module => module.default || module),
+    en: () => import('./dictionaries/en.json').then(module => module.default || module),
+  }), []);
+
   const [language, setLanguage] = useState<string>(() => {
     if (typeof window !== 'undefined') {
       return localStorage.getItem('language') || 'es';
@@ -24,7 +18,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     return 'es';
   });
 
-  const [dictionary, setDictionary] = useState<any>(null);
+  const [dictionary, setDictionary] = useState<DictionaryMessages | null>(null);
   
   useEffect(() => {
     const loadDict = async () => {
@@ -54,13 +48,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     if (!dictionary) return key; // Si el diccionario aún no está cargado, devolver la clave
     
     const keys = key.split('.');
-    let translation: any = dictionary;
+    let translation: string | DictionaryMessages = dictionary;
     
     for (const k of keys) {
-      translation = translation?.[k];
+      if (typeof translation === 'object' && translation !== null && k in translation) {
+        translation = (translation as DictionaryMessages)[k];
+      } else {
+        return key; // Si la clave no existe en la ruta, devolver la clave original
+      }
     }
     
-    return translation || key;
+    return typeof translation === 'string' ? translation : key;
   };
 
   return (

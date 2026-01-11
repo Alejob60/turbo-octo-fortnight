@@ -5,8 +5,8 @@ import {
   Activity, GraduationCap, Search, 
   Server, Cpu, Globe, ChevronRight, Menu,
   Satellite, Box, Scan, Layers, Eye, 
-  Move3d, Component, Zap, Leaf, Building2, Shield, Radio, MessageSquare,
-  Crosshair, ShieldCheck, Key
+  Move3d, Component, Leaf, Shield, Radio, MessageSquare,
+  ShieldCheck
 } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Login from '@/components/auth/Login';
@@ -24,11 +24,11 @@ const LandingPage = () => {
   const [typingSpeed, setTypingSpeed] = useState(100);
 
   const messages = [
-    "Blindar los Recursos Públicos.",    // Orbital Audit
-    "Automatizar la Industria 4.0.",     // Orbital Vision
-    "Monitorear el Territorio Nacional.",  // Sentinel Sat
-    "Salvar Vidas con Datos.",           // Orbital Health
-    "Construir la Colombia del Futuro."  // Visión General
+    "Blindar los Recursos Públicos.",
+    "Automatizar la Industria 4.0.",
+    "Monitorear el Territorio Nacional.",
+    "Salvar Vidas con Datos.",
+    "Construir la Colombia del Futuro."
   ];
 
   useEffect(() => {

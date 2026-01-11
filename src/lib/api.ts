@@ -1,6 +1,4 @@
-// API configuration for MisYBot backend integration
-// Using proxy route to avoid CORS issues
-const API_BASE_URL = process.env.NEXT_PUBLIC_MISYBOT_API_URL || 'http://localhost:8000/api';
+import { User } from '@/lib/types';
 
 // Tenant ID - In a real application, this would come from user's organization
 const DEFAULT_TENANT_ID = '7ae71544-d143-4b8f-8ae9-42a8a8c3c6ba';
@@ -50,10 +48,10 @@ class MisYBotAPIService {
   }
 
   // Get current user data
-  private getCurrentUser(): any {
+  private getCurrentUser(): User | null {
     if (typeof window !== 'undefined') {
       const userData = localStorage.getItem('user_data');
-      return userData ? JSON.parse(userData) : null;
+      return userData ? JSON.parse(userData) as User : null;
     }
     return null;
   }
@@ -69,7 +67,7 @@ class MisYBotAPIService {
   }
 
   // Build request payload with required metadata
-  private buildPayload(requestData: any): any {
+  private buildPayload<TRequestData extends Record<string, unknown>>(requestData: TRequestData): Record<string, unknown> & TRequestData {
     const user = this.getCurrentUser();
     
     if (!user) {
@@ -113,7 +111,7 @@ class MisYBotAPIService {
       let errorData;
       try {
         errorData = await response.json();
-      } catch (e) {
+      } catch (_err: unknown) {
         // If response is not JSON, use status text
         errorData = { error: { message: response.statusText } };
       }
@@ -125,7 +123,7 @@ class MisYBotAPIService {
   }
 
   // Request method with payload building for authenticated endpoints
-  private async authenticatedRequest<T>(endpoint: string, requestData: any, method: string = 'POST'): Promise<T> {
+  private async authenticatedRequest<T, TRequestData extends Record<string, unknown> = Record<string, never>>(endpoint: string, requestData: TRequestData, method: string = 'POST'): Promise<T> {
     // Verify user is authenticated
     if (!this.getAuthToken()) {
       throw new Error('User not authenticated');
@@ -149,7 +147,7 @@ class MisYBotAPIService {
         let errorData;
         try {
           errorData = await response.json();
-        } catch (e) {
+        } catch (_err: unknown) {
           // If response is not JSON, use status text
           errorData = { error: { message: response.statusText } };
         }
@@ -173,7 +171,7 @@ class MisYBotAPIService {
         let errorData;
         try {
           errorData = await response.json();
-        } catch (e) {
+        } catch (_err: unknown) {
           // If response is not JSON, use status text
           errorData = { error: { message: response.statusText } };
         }
@@ -305,16 +303,16 @@ class MisYBotAPIService {
         try {
           const errorData = await response.json();
           console.error('Logout error response:', errorData);
-        } catch (e) {
-          console.error('Logout response is not JSON:', await response.text());
+        } catch (error: unknown) {
+          console.error('Logout response is not JSON:', error instanceof Error ? error.message : String(error));
         }
       } else {
         // Si la respuesta es exitosa, parsearla como JSON
         const result = await response.json();
         console.log('Logout successful on server:', result);
       }
-    } catch (error) {
-      console.error('Network error during logout:', error);
+    } catch (error: unknown) {
+      console.error('Network error during logout:', error instanceof Error ? error.message : String(error));
     }
 
     // Siempre limpiar el localStorage
@@ -343,7 +341,7 @@ class MisYBotAPIService {
     return this.authenticatedRequest(API_ENDPOINTS.agents, {}, 'GET');
   }
 
-  async performDataAudit(auditParams: any) {
+  async performDataAudit(auditParams: Record<string, unknown>) {
     return this.authenticatedRequest(API_ENDPOINTS.dataAudit, auditParams);
   }
 
@@ -352,11 +350,11 @@ class MisYBotAPIService {
   }
 
   // Content generation methods
-  async generatePromoImage(contentRequest: any) {
+  async generatePromoImage(contentRequest: Record<string, unknown>) {
     return this.authenticatedRequest(API_ENDPOINTS.generatePromo, { contentRequest });
   }
 
-  async generateImage(contentRequest: any) {
+  async generateImage(contentRequest: Record<string, unknown>) {
     return this.authenticatedRequest(API_ENDPOINTS.generateImage, { contentRequest });
   }
 
@@ -368,7 +366,7 @@ class MisYBotAPIService {
     return this.authenticatedRequest(API_ENDPOINTS.credits, {}, 'GET');
   }
 
-  async generateContent(contentRequest: any) {
+  async generateContent(contentRequest: Record<string, unknown>) {
     return this.authenticatedRequest(API_ENDPOINTS.contentGenerate, { contentRequest });
   }
 
@@ -385,7 +383,7 @@ class MisYBotAPIService {
     return this.authenticatedRequest(API_ENDPOINTS.settings, {}, 'GET');
   }
 
-  async updateSettings(settings: any) {
+  async updateSettings(settings: Record<string, unknown>) {
     return this.authenticatedRequest(API_ENDPOINTS.settings, settings, 'PUT');
   }
 

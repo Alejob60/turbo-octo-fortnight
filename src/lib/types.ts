@@ -76,7 +76,25 @@ export interface VisionInsight {
   description: string;
   confidence: number;
   location: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
+}
+
+export interface RequestMetadata {
+  timestamp: string;
+  clientId: string;
+  sessionId: string;
+}
+
+export interface AuthRequestPayload {
+  userId: string;
+  tenantId: string;
+  userData: {
+    email: string;
+    name: string;
+    role: string;
+  };
+  requestMetadata: RequestMetadata;
+  [key: string]: unknown; // Allow for other properties dynamically
 }
 
 export interface OrbitalDashboardData {

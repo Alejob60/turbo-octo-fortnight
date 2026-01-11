@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     
     // Remover tenantId del cuerpo si existe, ya que el backend lo espera como header
-    const { tenantId, ...cleanBody } = body;
+    const { tenantId: _, ...cleanBody } = body;
     
     // Hacer la solicitud al backend real
     const response = await fetch(`${backendUrl}/auth/register`, {

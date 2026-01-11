@@ -3,16 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Activity, ShieldCheck, GraduationCap, Search, 
-  Server, Cpu, Globe, ChevronRight, Menu,
-  Satellite, Crosshair, MessageSquare, Box, 
-  Scan, Layers, Eye, Move3d, Component, Radio, X, Wifi, Lock, Shield
+  Server, Cpu, ChevronRight, Menu,
+  Satellite, Crosshair, MessageSquare, Box, Radio, Lock
 } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Login from '@/components/auth/Login';
 import InfrastructureMap from '@/components/InfrastructureMap';
 
 const LandingPage = () => {
-  const { t } = useLanguage();
+  useLanguage();
   const [showLoginModal, setShowLoginModal] = useState(false);
   
   // --- LÓGICA DEL HERO DINÁMICO (Typewriter Effect) ---

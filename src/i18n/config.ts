@@ -1,5 +1,5 @@
 // src/i18n/config.ts
-import { getTranslations } from 'next-intl/server';
+
 
 export const locales = ['es', 'en'];
 export const defaultLocale = 'es';

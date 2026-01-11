@@ -61,8 +61,9 @@ const Login = () => {
       } else {
         throw new Error('Token no encontrado en la respuesta del servidor');
       }
-    } catch (err: any) {
-      setError(err.message || 'Credenciales inválidas. Por favor, inténtalo de nuevo.');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Credenciales inválidas. Por favor, inténtalo de nuevo.';
+      setError(errorMessage);
       console.error('Login error:', err);
     } finally {
       setLoading(false);

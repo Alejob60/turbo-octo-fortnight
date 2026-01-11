@@ -1,8 +1,8 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, useEffect } from "react";
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-import { Lock, User, Key, ShieldCheck, AlertTriangle, X, Activity, Mail } from 'lucide-react';
+import { Lock, User, Key, ShieldCheck, AlertTriangle, X, Activity, Mail } from "lucide-react";
 
 import { misybotAPI } from '@/lib/api';
 
@@ -99,14 +99,14 @@ const LoginModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 
       }
 
-    } catch (err: any) {
-
-      setError(err.message || 'Credenciales inválidas. Por favor, inténtalo de nuevo.');
-
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Credenciales inválidas. Por favor, inténtalo de nuevo.');
+      } else {
+        setError('An unexpected error occurred.');
+      }
       setIsLoading(false);
-
       setStatus('idle');
-
     }
 
   };
@@ -169,14 +169,14 @@ const LoginModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
 
       }
 
-    } catch (err: any) {
-
-      setError(err.message || 'Error al registrar usuario. Por favor, inténtalo de nuevo.');
-
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Error al registrar usuario. Por favor, inténtalo de nuevo.');
+      } else {
+        setError('An unexpected error occurred during registration.');
+      }
       setIsLoading(false);
-
       setStatus('idle');
-
     }
 
   };

@@ -5,7 +5,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useAuth } from '../contexts/AuthContext';
 import { 
   Activity, FileText, Target, AlertTriangle, 
-  TrendingUp, TrendingDown, User, Cpu, Eye, 
+  TrendingUp, Eye, 
   Shield, Zap, Server, Menu, X 
 } from 'lucide-react';
 import TerminalShell from './TerminalShell';

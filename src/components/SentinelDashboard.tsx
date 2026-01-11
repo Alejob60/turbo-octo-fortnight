@@ -7,9 +7,7 @@ import {
   DollarSign, 
   TrendingUp, 
   Activity,
-  Package,
-  Users,
-  Clock
+  Package
 } from 'lucide-react';
 import {
   AreaChart,
@@ -24,15 +22,7 @@ import {
   Cell
 } from 'recharts';
 
-// Tipos de datos
-interface Incident {
-  id: string;
-  producto: string;
-  valor_fuga: number;
-  fecha: string;
-  estado: 'abierto' | 'cerrado';
-  descripcion: string;
-}
+
 
 interface MisybotLog {
   id: string;
@@ -158,8 +148,13 @@ const LogItem = ({ log }: { log: MisybotLog }) => {
 };
 
 const SentinelDashboard = () => {
-  const [data, setData] = useState<SentinelData>(initialData);
-  const [activeTab, setActiveTab] = useState<'overview' | 'details'>('overview');
+  const [data] = useState<SentinelData>(initialData);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   
   // Formateador de moneda COP
   const formatCurrency = (value: number) => {
@@ -235,65 +230,67 @@ const SentinelDashboard = () => {
           </div>
         </div>
         <div className="h-80 min-h-[300px] min-w-[300px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={data.historico}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-              <XAxis 
-                dataKey="mes" 
-                stroke="#94a3b8" 
-                tick={{ fill: '#94a3b8' }} 
-              />
-              <YAxis 
-                stroke="#94a3b8" 
-                tick={{ fill: '#94a3b8' }}
-                tickFormatter={(value) => `${value}M`}
-              />
-              <Tooltip 
-                formatter={(value) => [`${value}M COP`, 'Perdida']}
-                labelFormatter={(label) => `Mes: ${label}`}
-                contentStyle={{ 
-                  backgroundColor: '#1e293b', 
-                  border: '1px solid #334155',
-                  borderRadius: '0.5rem',
-                  color: '#e2e8f0'
-                }}
-              />
-              {/* Área entre las dos líneas */}
-              <Area
-                type="monotone"
-                dataKey="perdidaSinBlindaje"
-                stroke="none"
-                fill="url(#colorGradient)"
-                fillOpacity={0.1}
-                name="Capital Salvado"
-              />
-              {/* Línea de tendencia sin blindaje */}
-              <Area
-                type="monotone"
-                dataKey="perdidaSinBlindaje"
-                stroke="#94a3b8"
-                strokeWidth={2}
-                strokeDasharray="5 5"
-                fill="none"
-                name="Sin Blindaje"
-              />
-              {/* Línea de pérdida con blindaje */}
-              <Area
-                type="monotone"
-                dataKey="perdidaConBlindaje"
-                stroke="#10b981"
-                strokeWidth={2}
-                fill="none"
-                name="Con Blindaje"
-              />
-              <defs>
-                <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.2}/>
-                  <stop offset="95%" stopColor="#10b981" stopOpacity={0.05}/>
-                </linearGradient>
-              </defs>
-            </AreaChart>
-          </ResponsiveContainer>
+          {hasMounted && (
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={data.historico}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                <XAxis 
+                  dataKey="mes" 
+                  stroke="#94a3b8" 
+                  tick={{ fill: '#94a3b8' }} 
+                />
+                <YAxis 
+                  stroke="#94a3b8" 
+                  tick={{ fill: '#94a3b8' }}
+                  tickFormatter={(value) => `${value}M`}
+                />
+                <Tooltip 
+                  formatter={(value) => [`${value}M COP`, 'Perdida']}
+                  labelFormatter={(label) => `Mes: ${label}`}
+                  contentStyle={{ 
+                    backgroundColor: '#1e293b', 
+                    border: '1px solid #334155',
+                    borderRadius: '0.5rem',
+                    color: '#e2e8f0'
+                  }}
+                />
+                {/* Área entre las dos líneas */}
+                <Area
+                  type="monotone"
+                  dataKey="perdidaSinBlindaje"
+                  stroke="none"
+                  fill="url(#colorGradient)"
+                  fillOpacity={0.1}
+                  name="Capital Salvado"
+                />
+                {/* Línea de tendencia sin blindaje */}
+                <Area
+                  type="monotone"
+                  dataKey="perdidaSinBlindaje"
+                  stroke="#94a3b8"
+                  strokeWidth={2}
+                  strokeDasharray="5 5"
+                  fill="none"
+                  name="Sin Blindaje"
+                />
+                {/* Línea de pérdida con blindaje */}
+                <Area
+                  type="monotone"
+                  dataKey="perdidaConBlindaje"
+                  stroke="#10b981"
+                  strokeWidth={2}
+                  fill="none"
+                  name="Con Blindaje"
+                />
+                <defs>
+                  <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0.05}/>
+                  </linearGradient>
+                </defs>
+              </AreaChart>
+            </ResponsiveContainer>
+          )}
         </div>
         {/* Etiqueta flotante */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -312,45 +309,47 @@ const SentinelDashboard = () => {
             Top 5 Productos con Mayor Fuga
           </h2>
           <div className="h-80 min-h-[300px] min-w-[300px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                layout="horizontal"
-                data={data.topFugas}
-                margin={{ top: 20, right: 30, left: 100, bottom: 50 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={true} vertical={false} />
-                <XAxis 
-                  type="number" 
-                  stroke="#94a3b8" 
-                  tick={{ fill: '#94a3b8' }}
-                  tickFormatter={(value) => `${(value / 1000000).toFixed(1)}M`}
-                />
-                <YAxis 
-                  type="category" 
-                  dataKey="producto" 
-                  stroke="#94a3b8" 
-                  tick={{ fill: '#94a3b8' }}
-                  width={90}
-                />
-                <Tooltip 
-                  formatter={(value) => [formatCurrency(Number(value)), 'Valor']}
-                  contentStyle={{ 
-                    backgroundColor: '#1e293b', 
-                    border: '1px solid #334155',
-                    borderRadius: '0.5rem',
-                    color: '#e2e8f0'
-                  }}
-                />
-                <Bar dataKey="valor" name="Valor de Fuga">
-                  {data.topFugas.map((entry, index) => (
-                    <Cell 
-                      key={`cell-${index}`} 
-                      fill={index === 0 ? '#ef4444' : index === 1 ? '#f87171' : '#fb7185'} 
-                    />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+            {hasMounted && (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  layout="horizontal"
+                  data={data.topFugas}
+                  margin={{ top: 20, right: 30, left: 100, bottom: 50 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" horizontal={true} vertical={false} />
+                  <XAxis 
+                    type="number" 
+                    stroke="#94a3b8" 
+                    tick={{ fill: '#94a3b8' }}
+                    tickFormatter={(value) => `${(value / 1000000).toFixed(1)}M`}
+                  />
+                  <YAxis 
+                    type="category" 
+                    dataKey="producto" 
+                    stroke="#94a3b8" 
+                    tick={{ fill: '#94a3b8' }}
+                    width={90}
+                  />
+                  <Tooltip 
+                    formatter={(value) => [formatCurrency(Number(value)), 'Valor']}
+                    contentStyle={{ 
+                      backgroundColor: '#1e293b', 
+                      border: '1px solid #334155',
+                      borderRadius: '0.5rem',
+                      color: '#e2e8f0'
+                    }}
+                  />
+                  <Bar dataKey="valor" name="Valor de Fuga">
+                    {data.topFugas.map((entry, index) => (
+                      <Cell 
+                        key={`cell-${index}`} 
+                        fill={index === 0 ? '#ef4444' : index === 1 ? '#f87171' : '#fb7185'} 
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
           </div>
         </div>
 

@@ -10,8 +10,6 @@ import ReactFlow, {
   Position,
   Node,
   NodeProps,
-  Edge,
-  Connection,
   NodeMouseHandler
 } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -218,8 +216,8 @@ const initialEdges = [
 // --- 4. COMPONENTE PRINCIPAL ---
 const InfrastructureMap = () => {
   const { t } = useLanguage();
-  const [nodes, setNodes, onNodesChange] = useNodesState<CustomNodeData>(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState<CustomNodeData>(initialNodes);
+  const [edges, , onEdgesChange] = useEdgesState(initialEdges);
   const [selectedInfo, setSelectedInfo] = useState<NodeDetail | null>(null);
 
   const nodeTypes = useMemo(() => ({ cyber: CyberNode }), []);

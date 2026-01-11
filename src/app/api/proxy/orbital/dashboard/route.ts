@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
 
   try {
     // Valores estáticos para evitar uso de headers
-    const authHeader = null;
+    const authHeader = null; // eslint-disable-line @typescript-eslint/no-unused-vars
     const tenantId = '7ae71544-d143-4b8f-8ae9-42a8a8c3c6ba';
     
     // Definir posibles rutas para el dashboard
@@ -93,8 +93,8 @@ export async function GET(request: NextRequest) {
         } else {
           lastError = `Ruta ${route} no encontrada`;
         }
-      } catch (error: any) {
-        lastError = `Error con ruta ${route}: ${error.message || error}`;
+      } catch (error: unknown) {
+        lastError = `Error con ruta ${route}: ${error instanceof Error ? error.message : String(error)}`;
         console.log(lastError);
         continue;
       }
@@ -122,8 +122,8 @@ export async function GET(request: NextRequest) {
         'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-tenant-id',
       },
     });
-  } catch (error) {
-    console.warn('Error conectando al backend, usando datos mock:', error);
+  } catch (error: unknown) {
+    console.warn('Error conectando al backend, usando datos mock:', error instanceof Error ? error.message : String(error));
     // En caso de error, devolver datos mock
     return new Response(
       JSON.stringify(MOCK_DASHBOARD_DATA),

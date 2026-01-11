@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+'use client';
+
+import React, { useState, useEffect } from "react";
+import { motion } from 'framer-motion';
 import { 
   Activity, Shield, Users, Clock, AlertTriangle, 
   Map, Server, Zap, HeartPulse, Landmark, 
-  Lock, ChevronRight, FileSearch, DollarSign, Box,
-  Globe, Menu, RefreshCw
-} from 'lucide-react';
+  Lock, FileSearch, DollarSign, Box,
+  Globe, Menu
+} from "lucide-react";
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
 } from 'recharts';
@@ -33,24 +35,13 @@ interface AlertItem {
   source: string;
 }
 
-interface ChartDataPoint {
-  time: string;
-  value: number;
-}
 
-interface ModeData {
-  id: string;
-  themeColor: string;
-  title: string;
-  sector: string;
-  kpis: KpiItem[];
-  alerts: AlertItem[];
-  chartData: ChartDataPoint[];
-}
+
+
 
 // --- COMPONENTES UI ---
 
-const KpiCard = ({ item, color, t }: { item: KpiItem; color: string; t: (key: string) => string }) => {
+const KpiCard = ({ item, color }: { item: KpiItem; color: string }) => {
   const lang = typeof window !== 'undefined' ? (window.location.pathname.includes('/es') ? 'es' : 'en') : 'en';
   
   return (
@@ -82,7 +73,7 @@ const KpiCard = ({ item, color, t }: { item: KpiItem; color: string; t: (key: st
   );
 };
 
-const AlertRow = ({ alert, color, t }: { alert: AlertItem; color: string; t: (key: string) => string }) => {
+const AlertRow = ({ alert, color }: { alert: AlertItem; color: string }) => {
   const lang = typeof window !== 'undefined' ? (window.location.pathname.includes('/es') ? 'es' : 'en') : 'en';
   
   return (
@@ -383,7 +374,7 @@ export default function AuditDashboard() {
               {/* KPIs */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {currentData.kpis.map((item: KpiItem, index: number) => (
-                  <KpiCard key={index} item={item} color={currentData.themeColor} t={t} />
+                  <KpiCard key={index} item={item} color={currentData.themeColor} />
                 ))}
               </div>
               
@@ -431,7 +422,7 @@ export default function AuditDashboard() {
                   
                   <div className="divide-y divide-slate-900">
                     {currentData.alerts.map((alert: AlertItem, index: number) => (
-                      <AlertRow key={index} alert={alert} color={currentData.themeColor} t={t} />
+                      <AlertRow key={index} alert={alert} color={currentData.themeColor} />
                     ))}
                   </div>
                 </div>
