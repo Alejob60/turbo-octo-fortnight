@@ -3,10 +3,12 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { useLanguage } from '@/i18n/LanguageContext';
 import OrbitalPrimeDashboard from '@/components/OrbitalPrimeDashboard';
 
 const AdminOSPage = () => {
   const { isAuthenticated, loading } = useAuth();
+  const { t } = useLanguage();
   const router = useRouter();
 
   useEffect(() => {
@@ -22,7 +24,7 @@ const AdminOSPage = () => {
       <div className="flex items-center justify-center h-screen bg-[#030303] text-white">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500 mb-4"></div>
-          <p className="text-cyan-400 font-mono text-sm">VERIFICANDO SESIÓN...</p>
+          <p className="text-cyan-400 font-mono text-sm">{t('auth.verifying_session')}</p>
         </div>
       </div>
     );
@@ -34,7 +36,7 @@ const AdminOSPage = () => {
       <div className="flex items-center justify-center h-screen bg-[#030303] text-white">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-cyan-500 mb-4"></div>
-          <p className="text-cyan-400 font-mono text-sm">ACCESO NO AUTORIZADO - REDIRIGIENDO...</p>
+          <p className="text-cyan-400 font-mono text-sm">{t('auth.unauthorized_access_redirecting')}</p>
         </div>
       </div>
     );

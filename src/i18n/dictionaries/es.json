@@ -53,7 +53,8 @@
     "dashboard": "Dashboard",
     "nvidia_cores_active": "NVIDIA CORES: ACTIVO",
     "azure_secure": "AZURE: SEGURO",
-    "language": "ES/EN"
+    "language": "ES/EN",
+    "user": "Usuario"
   },
   "hero": {
     "title": "INFRAESTRUCTURA DE INTELIGENCIA ARTIFICIAL",
@@ -127,7 +128,9 @@
     "registerLink": "Regístrate aquí",
     "loginLink": "Inicia sesión aquí",
     "access_granted": "ACCESO CONCEDIDO",
-    "restricted_area_warning": "ÁREA RESTRINGIDA. Todos los intentos de acceso se registran usando protocolos de cómputo soberano NVIDIA."
+    "restricted_area_warning": "ÁREA RESTRINGIDA. Todos los intentos de acceso se registran usando protocolos de cómputo soberano NVIDIA.",
+    "verifying_session": "VERIFICANDO SESIÓN...",
+    "unauthorized_access_redirecting": "ACCESO NO AUTORIZADO - REDIRIGIENDO..."
   },
   "dashboard": {
     "title": "Dashboard de Auditoría",
@@ -431,5 +434,9 @@
     "security_title": "Seguridad & Certificaciones",
     "security_description": "Consultas sobre estándares de seguridad y certificaciones",
     "offices_title": "Oficinas"
+  },
+  "loading": {
+    "initializing_ai_ecosystem": "Inicializando ecosistema de IA...",
+    "loading_security_modules": "Cargando módulos de seguridad y análisis forense"
   }
 }

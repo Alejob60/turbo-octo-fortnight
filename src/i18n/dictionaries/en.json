@@ -53,7 +53,8 @@
     "dashboard": "Dashboard",
     "nvidia_cores_active": "NVIDIA CORES: ACTIVE",
     "azure_secure": "AZURE: SECURE",
-    "language": "EN/ES"
+    "language": "EN/ES",
+    "user": "User"
   },
   "hero": {
     "title": "ARTIFICIAL INTELLIGENCE INFRASTRUCTURE",
@@ -127,7 +128,9 @@
     "registerLink": "Sign up here",
     "loginLink": "Login here",
     "access_granted": "ACCESS GRANTED",
-    "restricted_area_warning": "RESTRICTED AREA. All access attempts are logged using NVIDIA sovereign compute protocols."
+    "restricted_area_warning": "RESTRICTED AREA. All access attempts are logged using NVIDIA sovereign compute protocols.",
+    "verifying_session": "VERIFYING SESSION...",
+    "unauthorized_access_redirecting": "UNAUTHORIZED ACCESS - REDIRECTING..."
   },
   "dashboard": {
     "title": "Audit Dashboard",
@@ -431,5 +434,9 @@
     "security_title": "Security & Certifications",
     "security_description": "Inquiries about security standards and certifications",
     "offices_title": "Offices"
+  },
+  "loading": {
+    "initializing_ai_ecosystem": "Initializing AI ecosystem...",
+    "loading_security_modules": "Loading security and forensic analysis modules"
   }
 }

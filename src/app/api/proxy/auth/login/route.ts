@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server';
 
 export async function POST(request: NextRequest) {
   // Obtener la URL del backend desde las variables de entorno
-  const backendUrl = process.env.NEXT_PUBLIC_MISYBOT_API_URL;
+  const backendUrl = process.env.MISYBOT_API_URL || process.env.NEXT_PUBLIC_MISYBOT_API_URL;
   
   if (!backendUrl) {
     return new Response(

@@ -1,7 +1,8 @@
-import './globals.css'
-import { LanguageProvider } from '@/i18n/LanguageContext';
-import AuthProviderWrapper from '@/components/AuthProviderWrapper';
-import { metadata as layoutMetadata } from './metadata';
+import "./globals.css"
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import AuthProviderWrapper from "@/components/AuthProviderWrapper";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import { metadata as layoutMetadata } from "./metadata";
 
 export const metadata = layoutMetadata;
 
@@ -15,6 +16,7 @@ export default function RootLayout({
       <body>
         <AuthProviderWrapper>
           <LanguageProvider>
+            <LoadingSpinner />
             {children}
           </LanguageProvider>
         </AuthProviderWrapper>

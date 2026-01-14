@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -108,13 +110,13 @@ const Hero = () => {
       {/* Overlay content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-mono">
-          OPERATING SYSTEM FOR MODERN ENTERPRISE
+          {t('hero.title')}
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-10 font-mono">
-          Deploying sovereign AI infrastructure for critical sectors
+          {t('hero.description')}
         </p>
         <button className="bg-transparent border border-[#007AFF] text-[#007AFF] px-8 py-3 font-mono hover:bg-[#007AFF] hover:text-white transition-colors">
-          INITIALIZE DEPLOYMENT
+          {t('hero.cta')}
         </button>
       </div>
     </section>

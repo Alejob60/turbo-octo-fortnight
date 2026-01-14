@@ -6,7 +6,7 @@ import {
   Server, Cpu, Globe, ChevronRight, Menu,
   Satellite, Box, Scan, Layers, Eye, 
   Move3d, Component, Leaf, Shield, Radio, MessageSquare,
-  ShieldCheck
+  ShieldCheck, Building2, Factory, Store
 } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Login from '@/components/auth/Login';
@@ -197,37 +197,55 @@ const LandingPage = () => {
             <span className="text-cyan-400 text-xs font-mono tracking-[0.2em] uppercase">{t('hero.badge') || 'NEURAL INFRASTRUCTURE: ONLINE'}</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-            {t('hero.title1') || 'Infraestructura de'} <br />
-            <span className="text-white">{t('hero.title2') || 'Inteligencia Soberana para'}</span> <br />
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+            Infraestructura de <br />
+            <span className="text-white">Vigilancia Autónoma & Forense</span> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-blue-500 min-h-[90px] block filter drop-shadow-[0_0_10px_rgba(6,182,212,0.5)]">
               {text}
               <span className="animate-blink text-cyan-200 ml-1">|</span>
             </span>
           </h1>
           
-          <p className="mt-8 max-w-2xl mx-auto text-xl text-slate-400 mb-10 leading-relaxed font-light">
-            {t('hero.subtitle1') || 'Desplegamos el'} <strong>{t('hero.subtitle2') || 'Ecosistema Digital Crítico'}</strong> {t('hero.subtitle3') || 'que Gobiernos y Empresas necesitan para operar en la era de la IA.'} <br/>
-            <span className="text-slate-500 text-sm mt-2 block font-mono">
-              {t('hero.subtitle4') || '[ SUPERCOMPUTING • VISION AI • SATELLITE DATA ]'}
+          <p className="mt-8 max-w-3xl mx-auto text-xl text-slate-300 mb-10 leading-relaxed font-light">
+            Transforme su red actual de cámaras en un ecosistema de inteligencia militar. 
+            <strong className="text-cyan-400">Sin cambiar hardware. Sin depender de sensores propietarios.</strong> 
+            Detección, trazabilidad y auditoría jurídica en tiempo real.
+            <span className="text-slate-500 text-sm mt-3 block font-mono">
+              [ HARDWARE AGNOSTIC • FORENSIC LEDGER • 3D SPATIAL AWARENESS ]
             </span>
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-5">
             <button 
-              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('demo-piloto')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-cyan-500 text-slate-950 px-8 py-4 font-bold hover:bg-cyan-400 transition-all hover:scale-105 flex items-center justify-center gap-2 uppercase tracking-wide shadow-[0_0_30px_rgba(6,182,212,0.4)] rounded-sm"
             >
-              {t('hero.deploy') || 'Desplegar Soluciones'}
+              Iniciar Protocolo de Piloto
               <ChevronRight className="w-5 h-5" />
             </button>
             <button 
-              onClick={() => setShowLoginModal(true)}
+              onClick={() => document.getElementById('tecnologia')?.scrollIntoView({ behavior: 'smooth' })}
               className="group border border-slate-600 bg-slate-900/50 text-slate-300 px-8 py-4 font-semibold hover:bg-slate-800 hover:border-slate-500 transition-all flex items-center justify-center gap-2 uppercase tracking-wide rounded-sm backdrop-blur-md"
             >
               <Globe className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
-              {t('hero.access') || 'Acceso Institucional'}
+              Ver Arquitectura Técnica
             </button>
+          </div>
+        </div>
+
+        {/* Trust Bar - Compatibilidad */}
+        <div className="w-full bg-slate-900/30 border-y border-slate-800 py-6">
+          <div className="max-w-7xl mx-auto px-4">
+            <p className="text-center text-slate-500 text-xs uppercase tracking-widest mb-4">
+              Compatible con infraestructura existente:
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">HIKVISION</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">DAHUA</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">AXIS</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">MILESTONE</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">ONVIF S/G</span>
+            </div>
           </div>
         </div>
 
@@ -264,7 +282,7 @@ const LandingPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1: Industrial / Bin Picking */}
+            {/* Card 1: Hardware Agnostic (El Ahorro) */}
             <div className="group bg-slate-900/40 border border-slate-800 p-8 hover:bg-slate-900 hover:border-cyan-500 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Move3d size={80} />
@@ -272,13 +290,13 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-cyan-500/10 rounded flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
                 <Box size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400">Industry 4.0 Robotics</h3>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400">Retrofit de Inteligencia</h3>
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                {t('vision_ai.industry_robotics') || 'Automatización industrial. Robots guiados por visión 3D para manipulación de carga, clasificación de paquetes y optimización de procesos en centros logísticos.'}
+                No compre cámaras nuevas. Orbital Prime se despliega sobre su NVR actual vía RTSP/ONVIF. Reduzca el costo de implementación en un 70% frente a soluciones de hardware cerrado.
               </p>
             </div>
 
-            {/* Card 2: Quality Control */}
+            {/* Card 2: Forensic Ledger (La Ley) */}
             <div className="group bg-slate-900/40 border border-slate-800 p-8 hover:bg-slate-900 hover:border-purple-500 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Scan size={80} />
@@ -286,13 +304,13 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-purple-500/10 rounded flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform">
                 <Component size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400">Metrología IA</h3>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400">Cadena de Custodia Digital</h3>
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                {t('vision_ai.quality_control') || 'Control de calidad preciso. Detectamos micro-fisuras, anomalías térmicas y errores de ensamblaje en líneas de producción sin contacto físico.'}
+                Cada alerta genera un hash inmutable. Trazabilidad total para fiscalía, aseguradoras y auditoría interna. Su evidencia es válida ante la ley.
               </p>
             </div>
 
-            {/* Card 3: Urban / Gov */}
+            {/* Card 3: 3D Spatial Awareness (La Tecnología) */}
             <div className="group bg-slate-900/40 border border-slate-800 p-8 hover:bg-slate-900 hover:border-emerald-500 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
                 <Layers size={80} />
@@ -300,9 +318,9 @@ const LandingPage = () => {
               <div className="w-12 h-12 bg-emerald-500/10 rounded flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                 <Eye size={24} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400">Urban Analytics</h3>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400">Analítica Volumétrica sin LiDAR</h3>
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                {t('vision_ai.urban_analytics') || 'Escaneo Lidar de vías para detectar deterioro, conteo volumétrico de tráfico y monitoreo de infraestructura urbana con drones.'}
+                Entendimiento espacial 3D usando cámaras 2D estándar. Detección de anomalías, conteo de flujo y mapas de calor en coordenadas reales (X,Y,Z).
               </p>
             </div>
           </div>
@@ -450,6 +468,62 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* --- SECTION: USE CASES B2B --- */}
+      <section className="py-20 bg-slate-900 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Despliegue Operativo</h2>
+            <p className="text-slate-400 max-w-3xl mx-auto text-lg">
+              Soluciones específicas para sectores estratégicos con impacto inmediato en ROI y cumplimiento normativo.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-slate-900/50 border border-slate-800 p-8 hover:border-cyan-500/50 transition-all group">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-cyan-500/10 rounded flex items-center justify-center text-cyan-400">
+                  <Building2 size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">🏛️ Gobierno & Smart Cities</h3>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Detección de comportamientos atípicos en espacio público, gestión de tráfico y protección de infraestructura crítica.
+              </p>
+            </div>
+
+            <div className="bg-slate-900/50 border border-slate-800 p-8 hover:border-purple-500/50 transition-all group">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-purple-500/10 rounded flex items-center justify-center text-purple-400">
+                  <Factory size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">🏭 Industria 4.0 & Minería</h3>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Control de EPP (Cascos/Chalecos), zonas de exclusión (Geofencing) y detección de fatiga en operadores.
+              </p>
+            </div>
+
+            <div className="bg-slate-900/50 border border-slate-800 p-8 hover:border-emerald-500/50 transition-all group">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-12 h-12 bg-emerald-500/10 rounded flex items-center justify-center text-emerald-400">
+                  <Store size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">🏬 Retail & Banca</h3>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm">
+                Prevención de pérdidas, análisis de flujo de clientes y seguridad perimetral nocturna automatizada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* --- SECTION: INFRASTRUCTURE MAP --- */}
       <InfrastructureMap />
 
@@ -466,18 +540,69 @@ const LandingPage = () => {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-bold text-white mb-6">{t('contact.form_title') || 'Formulario de Contacto'}</h3>
-              <form className="space-y-6" onSubmit={(e) => {
+              <form className="space-y-6" onSubmit={async (e) => {
                 e.preventDefault();
-                // Enviar correo a alejandro@orbitalprime.com.co
+                              
+                // Obtener datos del formulario
                 const formData = new FormData(e.target as HTMLFormElement);
-                const name = formData.get('nombre') as string;
+                const nombre = formData.get('nombre') as string;
                 const email = formData.get('email') as string;
-                const subject = formData.get('asunto') as string;
-                const message = formData.get('mensaje') as string;
-                
-                // Crear URL de mailto con los datos del formulario
-                const mailtoLink = `mailto:alejandro@orbitalprime.com.co?subject=${encodeURIComponent(subject || 'Consulta desde la web')}&body=${encodeURIComponent(`Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`)}`;
-                window.location.href = mailtoLink;
+                const asunto = formData.get('asunto') as string;
+                const mensaje = formData.get('mensaje') as string;
+                              
+                // Mostrar estado de carga
+                const submitButton = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
+                const originalText = submitButton.innerHTML;
+                submitButton.innerHTML = '<div class="flex items-center gap-2"><div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div> Enviando...</div>';
+                submitButton.disabled = true;
+                              
+                try {
+                  // Enviar datos a la API
+                  const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      nombre,
+                      email,
+                      asunto,
+                      mensaje
+                    })
+                  });
+                                
+                  const result = await response.json();
+                                
+                  if (result.success) {
+                    // Mostrar mensaje de éxito
+                    submitButton.innerHTML = originalText;
+                    submitButton.classList.add('bg-emerald-600', 'hover:bg-emerald-500');
+                    submitButton.innerHTML = '✅ ¡Mensaje Enviado!';
+                                  
+                    // Mostrar notificación
+                    alert(result.message + '\n\n' + (result.details || '') + (result.fallback ? '\n\nSe abrirá tu cliente de correo.' : ''));
+                                  
+                    // Si es fallback, abrir cliente de correo
+                    if (result.fallback && result.mailtoLink) {
+                      window.location.href = result.mailtoLink;
+                    }
+                                  
+                    // Resetear formulario después de 2 segundos
+                    setTimeout(() => {
+                      (e.target as HTMLFormElement).reset();
+                      submitButton.classList.remove('bg-emerald-600', 'hover:bg-emerald-500');
+                      submitButton.innerHTML = originalText;
+                      submitButton.disabled = false;
+                    }, 2000);
+                  } else {
+                    throw new Error(result.error);
+                  }
+                } catch (error) {
+                  console.error('Error al enviar el formulario:', error);
+                  submitButton.innerHTML = originalText;
+                  submitButton.disabled = false;
+                  alert('❌ Error al enviar el mensaje. Por favor inténtalo de nuevo.');
+                }
               }}>
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-2">{t('contact.full_name') || 'Nombre Completo'}</label>
@@ -528,36 +653,16 @@ const LandingPage = () => {
               <h3 className="text-xl font-bold text-white mb-6">{t('contact.info_title') || 'Información de Contacto'}</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-cyan-900/30 p-3 rounded-lg text-cyan-400">
-                    <Radio size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">{t('contact.support_title') || 'Soporte Técnico'}</h4>
-                    <p className="text-slate-400 text-sm">{t('contact.support_description') || 'Soporte técnico 24/7 para clientes con soluciones implementadas'}</p>
-                    <p className="text-cyan-400 text-sm mt-1">soporte@orbitalprime.com.co</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-purple-900/30 p-3 rounded-lg text-purple-400">
-                    <Server size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">{t('contact.sales_title') || 'Ventas & Negocios'}</h4>
-                    <p className="text-slate-400 text-sm">{t('contact.sales_description') || 'Solicite una demostración o cotización de nuestras soluciones empresariales'}</p>
-                    <p className="text-purple-400 text-sm mt-1">ventas@orbitalprime.com.co</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-900/30 p-3 rounded-lg text-green-400">
-                    <Shield size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">{t('contact.security_title') || 'Seguridad & Certificaciones'}</h4>
-                    <p className="text-slate-400 text-sm">{t('contact.security_description') || 'Consultas sobre estándares de seguridad y certificaciones'}</p>
-                    <p className="text-green-400 text-sm mt-1">seguridad@orbitalprime.com.co</p>
+                <div className="text-center py-8">
+                  <div className="bg-cyan-900/20 p-6 rounded-xl border border-cyan-800/50">
+                    <Radio size={32} className="text-cyan-400 mx-auto mb-4" />
+                    <h4 className="font-bold text-white text-lg mb-2">Contacto Directo</h4>
+                    <p className="text-slate-400 text-sm mb-4">
+                      {t('contact.description') || 'Complete el formulario y nuestro equipo se comunicará con usted pronto.'}
+                    </p>
+                    <p className="text-cyan-400 font-mono text-sm">
+                      📧 alejandor@orbitalprime.com.co
+                    </p>
                   </div>
                 </div>
               </div>
@@ -571,6 +676,61 @@ const LandingPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- CLOSING CTA SECTION --- */}
+      <section id="demo-piloto" className="py-20 bg-gradient-to-br from-slate-900 to-slate-950 border-t border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Habilite su Piloto Controlado
+          </h2>
+          
+          <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+            Orbital Prime trabaja con cupos de integración limitados por trimestre 
+            para garantizar la estabilidad operativa de nuestros socios.
+          </p>
+
+          <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-8 mb-8">
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-cyan-400 mb-2">70%</div>
+                <div className="text-sm text-slate-400">Reducción de costos</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-purple-400 mb-2">&lt;24h</div>
+                <div className="text-sm text-slate-400">Implementación piloto</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-emerald-400 mb-2">ISO 27001</div>
+                <div className="text-sm text-slate-400">Cumplimiento forense</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-8">
+            <a 
+              href="mailto:gerencia@orbitalprime.com.co?subject=Solicitud%20Piloto%20Corporativo&body=Nombre:%0AEmpresa/Entidad:%0ANúmero%20de%20Cámaras:%0A" 
+              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 px-10 py-5 font-bold text-lg rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all shadow-[0_0_30px_rgba(8,145,178,0.6)] transform hover:scale-105"
+            >
+              Solicitar Validación de Proyecto
+            </a>
+            <p className="text-slate-500 text-sm mt-4">
+              Respuesta técnica en &lt; 24 horas.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+            <span className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-green-500" /> SLA 99.9%
+            </span>
+            <span className="flex items-center gap-2">
+              <Server className="w-4 h-4 text-cyan-500" /> Azure Government
+            </span>
+            <span className="flex items-center gap-2">
+              <Cpu className="w-4 h-4 text-purple-500" /> NVIDIA A100
+            </span>
           </div>
         </div>
       </section>

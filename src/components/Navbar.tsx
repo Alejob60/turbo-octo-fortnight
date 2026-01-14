@@ -120,7 +120,7 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="ml-3">
-                <div className="text-base font-medium text-gray-800">Usuario</div>
+                <div className="text-base font-medium text-gray-800">{t('nav.user')}</div>
               </div>
             </div>
             <div className="mt-3 space-y-1">
