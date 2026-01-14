@@ -143,7 +143,7 @@
       "preventedIncidents": "PREVENTED INCIDENTS",
       "responseLatency": "RESPONSE LATENCY",
       "hotspotsActive": "HOTSPOTS ACTIVE",
-      "cameraCoverage": "CAMERA COVERAGE",
+      "infrastructureCoverage": "INFRASTRUCTURE COVERAGE",
       "fraudBlocked": "FRAUD BLOCKED",
       "txVolume": "TX VOLUME",
       "falsePositives": "FALSE POSITIVES",

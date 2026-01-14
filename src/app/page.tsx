@@ -240,10 +240,10 @@ const LandingPage = () => {
               Compatible con infraestructura existente:
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">HIKVISION</span>
-              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">DAHUA</span>
-              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">AXIS</span>
-              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">MILESTONE</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">ONVIF PROFILE S/G</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">RTSP/H.264</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">VMS INTEGRATION</span>
+              <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">STANDARD PROTOCOLS</span>
               <span className="text-slate-400 font-mono text-sm opacity-70 hover:opacity-100 transition-opacity">ONVIF S/G</span>
             </div>
           </div>

@@ -155,7 +155,7 @@ export default function AuditDashboard() {
         { label_en: t('dashboard.kpi.preventedIncidents'), label_es: t('dashboard.kpi.preventedIncidents'), value: "14", trend: t('dashboard.alert.today'), status: "good" as const, icon: Shield },
         { label_en: t('dashboard.kpi.responseLatency'), label_es: t('dashboard.kpi.responseLatency'), value: "92s", trend: "-30s", status: "good" as const, icon: Zap },
         { label_en: t('dashboard.kpi.hotspotsActive'), label_es: t('dashboard.kpi.hotspotsActive'), value: "3", trend: t('dashboard.alert.monitoring'), status: "warning" as const, icon: Map },
-        { label_en: t('dashboard.kpi.cameraCoverage'), label_es: t('dashboard.kpi.cameraCoverage'), value: "98%", trend: t('dashboard.alert.optimal'), status: "good" as const, icon: Server },
+        { label_en: t('dashboard.kpi.infrastructureCoverage'), label_es: t('dashboard.kpi.infrastructureCoverage'), value: "98%", trend: t('dashboard.alert.optimal'), status: "good" as const, icon: Server }
       ],
       alerts: [
         { type: "CRITICAL" as const, msg_en: t('dashboard.alerts.critical_weapons_signature'), msg_es: t('dashboard.alerts.critical_weapons_signature'), time: t('dashboard.alerts.live_time'), source: "VISION-AI" },
